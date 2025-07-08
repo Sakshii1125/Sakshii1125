@@ -8,14 +8,7 @@ exports.createUsers = async(req,res) =>{
             return res.status(400).json({message:"Please fill all the detail"})
         }
 
-        const baseUrl = "https://avatar.iran.liara.run/public";
-        let profile;
-        if(gender==="male"){
-          profile = {baseUrl}/boy
-        }
-        else{
-          profile = {baseUrl}/girl
-        }
+        
         
         const users = User({username,name,email,gender,profile})
         await users.save()
